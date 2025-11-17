@@ -113,6 +113,38 @@ This site can be deployed to:
 
 See [.github/workflows/hugo.yml](.github/workflows/hugo.yml) for automatic deployment on push.
 
+## GitHub Actions Workflows
+
+This repository includes several automated workflows:
+
+### Hugo Build & Deployment
+- **hugo.yml**: Builds and deploys the site to GitHub Pages on push to main
+- **pr-check.yml**: Validates that PRs build successfully before merging
+
+### Claude AI Integration
+
+The repository uses Claude AI for automated code review and quality checks:
+
+- **claude-pr-review.yml**: Reviews all pull requests for code quality, best practices, and security
+- **claude-blog-check.yml**: Analyzes blog post quality, grammar, SEO, and markdown syntax
+- **claude-security-scan.yml**: Performs security scans on PRs, pushes, and weekly scheduled runs
+
+#### Setting up Claude Workflows
+
+To enable Claude-powered workflows, add your Anthropic API key to repository secrets:
+
+1. Go to **Settings** → **Secrets and variables** → **Actions**
+2. Click **New repository secret**
+3. Name: `ANTHROPIC_API_KEY`
+4. Value: Your Anthropic API key from https://console.anthropic.com/
+5. Click **Add secret**
+
+The Claude workflows will automatically:
+- Review code changes in pull requests
+- Check blog posts for quality and readability
+- Scan for security vulnerabilities
+- Provide constructive feedback in workflow logs
+
 ## Project Structure
 
 ```
