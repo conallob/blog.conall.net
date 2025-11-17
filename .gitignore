@@ -1,0 +1,28 @@
+# Hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Temporary files
+.DS_Store
+.hugo_build.lock
+*.swp
+*.swo
+*~
+
+# WordPress migration files (optional - comment out if you want to keep them)
+wordpress_dump.sql
+
+# Editor directories
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/

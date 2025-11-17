@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+    {{ if .OutputFormats.Get "RSS" }}
+    <link rel="alternate" type="application/rss+xml" href="{{ with .OutputFormats.Get "RSS" }}{{ .Permalink }}{{ end }}" title="{{ .Site.Title }}">
+    {{ end }}
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+            <ul>
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ now.Year }} {{ .Site.Params.author }}. Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+    </footer>
+</body>
+</html>
