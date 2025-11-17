@@ -1,0 +1,42 @@
+baseURL = 'https://blog.conall.net/'
+languageCode = 'en-us'
+title = "Conall's Blog"
+theme = 'simple-blog'
+
+[params]
+  description = "A blog powered by Hugo"
+  author = "Conall"
+
+  # Enable search
+  enableSearch = true
+
+  # Date format
+  dateFormat = "2006-01-02"
+
+[params.homeInfoParams]
+  Title = "Welcome"
+  Content = "This blog has been migrated from WordPress to Hugo"
+
+[[menu.main]]
+  name = "Archive"
+  url = "/archives/"
+  weight = 10
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 20
+
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 30
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Enable syntax highlighting
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true

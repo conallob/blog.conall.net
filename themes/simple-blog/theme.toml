@@ -1,0 +1,4 @@
+name = "Simple Blog"
+license = "MIT"
+description = "A simple, clean blog theme for Hugo"
+min_version = "0.100.0"
